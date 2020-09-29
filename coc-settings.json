@@ -213,13 +213,6 @@
 			"command": "sql-language-server",
 			"args": ["up", "--method", "stdio"],
 			"filetypes": ["sql", "mysql"]
-		},
-		"efm": {
-			"command": "efm-langserver",
-			"args": [],
-			// custom config path
-			// "args": ["-c", "/path/to/your/config.yaml"],
-			"filetypes": ["vim", "eruby", "markdown"]
 		}
 	}
 }

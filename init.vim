@@ -55,18 +55,11 @@ noremap <LEADER><CR> :nohlsearch<CR>
 noremap = nzz
 noremap - Nzz
 
-noremap j h
-noremap k j
-noremap i k
-noremap l l
-noremap J 5h
-noremap K 5j
-noremap I 5k
+noremap H 5h
+noremap J 5j
+noremap K 5k
 noremap L 5l
 
-noremap h u
-noremap u i
-noremap U I
 
 map ; :
 map s <nop>
@@ -124,8 +117,8 @@ Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
 call plug#end()
 
-color snazzy
-let g:SnazzyTransparent = 1
+color
+
 
 " ====
 " ====NERDTree
@@ -224,7 +217,6 @@ function! Show_documentation()
         endif
 endfunction
 nnoremap <LEADER>h :call Show_documentation()<CR>
-
 nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
@@ -239,6 +231,8 @@ omap kc <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 " Useful commands
+autocmd CursorMoved * silent! exe printf('match Underlined /\<%s\>/', expand('<cword>'))
+autocmd CursorHold * silent! exe printf('match Underlined /\<%s\>/', expand('<cword>'))
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -300,5 +294,5 @@ let g:ctrlp_user_command = 'find %s -type f'
 " ===
 let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key='<C-Z>'
+autocmd FileType html,css,php EmmetInstall
+let g:user_emmet_leader_key='<C-L>'
