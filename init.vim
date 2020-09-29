@@ -195,7 +195,10 @@ let g:coc_global_extensions = [
 				\ 'coc-snippets',
 				\ 'coc-sh',
 				\ 'coc-syntax',
-				\ 'coc-git']
+				\ 'coc-git',
+				\	'coc-sql',
+				\ 'coc-eslint',
+				\ 'coc-phpls']
 inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
