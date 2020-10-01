@@ -38,16 +38,6 @@ set autochdir
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
-
-
-
-
-
-
-
-
-
-
 let mapleader=" "
 
 
@@ -115,6 +105,10 @@ Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 
 Plug 'kien/ctrlp.vim'
+
+Plug 'godlygeek/tabular'
+
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 color
@@ -224,6 +218,9 @@ nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
 nnoremap <c-c> :CocCommand<CR>
+" highlight the symbol and its references when holding the cursor.
+autocmd CursorMoved * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 " Text Objects
 xmap kf <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -234,8 +231,6 @@ omap kc <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 " Useful commands
-autocmd CursorMoved * silent! exe printf('match Underlined /\<%s\>/', expand('<cword>'))
-autocmd CursorHold * silent! exe printf('match Underlined /\<%s\>/', expand('<cword>'))
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
