@@ -106,9 +106,6 @@ Plug 'mattn/emmet-vim'
 
 Plug 'kien/ctrlp.vim'
 
-Plug 'godlygeek/tabular'
-
-Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 color
