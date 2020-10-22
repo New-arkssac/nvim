@@ -58,21 +58,21 @@ map Q :q<CR>
 map R :source $MYVIMRC<CR>
 
 map sl :set splitright<CR>:vsplit<CR>
-map sj :set nosplitright<CR>:vsplit<CR>
-map si :set splitbelow<CR>:split<CR>
-map sk :set nosplitbelow<CR>:split<CR>
+map sh :set nosplitright<CR>:vsplit<CR>
+map sk :set splitbelow<CR>:split<CR>
+map sj :set nosplitbelow<CR>:split<CR>
 
 map <LEADER>k <C-w>j
 map <LEADER>i <C-w>k
 map <LEADER>j <C-w>h
 map <LEADER>l <C-w>l
 
-map  <UP> :res +5<CR>
-map  <down> :res -5<CR>
+map  <down> :res +5<CR>
+map  <UP> :res -5<CR>
 map  <left> :vertical resize-5<CR>
 map  <right> :vertical resiz+5<CR>
 
-map  tt :tabe<CR>
+map  ww :tabe<CR>
 map  qq :-tabnext<CR>
 map  ee :+tabnext<CR>
 
@@ -106,9 +106,17 @@ Plug 'mattn/emmet-vim'
 
 Plug 'kien/ctrlp.vim'
 
+Plug 'rakr/vim-one'
+
 call plug#end()
 
 color
+" ====
+" ====vim-one
+" ====
+colorscheme one 
+set background=light
+let g:airline_theme='one'
 
 
 " ====
@@ -189,7 +197,8 @@ let g:coc_global_extensions = [
 				\ 'coc-git',
 				\	'coc-sql',
 				\ 'coc-eslint',
-				\ 'coc-phpls']
+				\ 'coc-phpls',
+				\ 'coc-pairs']
 inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
@@ -259,13 +268,14 @@ let g:snips_author = 'David Chen'
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+" coc-pairs
+autocmd FileType tex let b:coc_pairs = [["(", "{","[","'","<"]]
 
 " ===
 " ===indentLine
 " ===
 let g:indent_guides_guide_size            = 1   
 let g:indent_guides_start_level           = 2
-
 
 
 " ===
