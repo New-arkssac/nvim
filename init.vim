@@ -108,6 +108,8 @@ Plug 'kien/ctrlp.vim'
 
 Plug 'rakr/vim-one'
 
+Plug 'iamcco/markdown-preview.nvim',{'do': 'cd app & yarn install'}
+
 call plug#end()
 
 color
@@ -301,3 +303,8 @@ let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,php EmmetInstall
 let g:user_emmet_leader_key='<C-L>'
+
+" ===
+" ===markdown-preview
+" ===
+let g:mkdp_brower = 'Google chrome'
