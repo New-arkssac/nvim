@@ -158,7 +158,7 @@
 	"javascript.suggest.names": true,
 	"javascript.suggestionActions.enabled": true,
 	"json.format.enable": true,
-	"eslint.autoFixOnSave": false,
+	"eslint.autoFixOnSave": true,
 	"prettier.printWidth": 100,
 	"todolist.autoUpload": true,
 	"todolist.promptForReminder": false,
