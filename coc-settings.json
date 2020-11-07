@@ -66,7 +66,9 @@
 		"html",
 		"css",
 		"json",
-		"python, php, javascript"
+		"python",
+		"php",
+		"javascript"
 	],
 	"yaml.format.enable": true,
 	"signature.target": "float",
