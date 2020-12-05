@@ -62,9 +62,9 @@ map sh :set nosplitright<CR>:vsplit<CR>
 map sk :set splitbelow<CR>:split<CR>
 map sj :set nosplitbelow<CR>:split<CR>
 
-map <LEADER>k <C-w>j
-map <LEADER>i <C-w>k
-map <LEADER>j <C-w>h
+map <LEADER>j <C-w>j
+map <LEADER>k <C-w>k
+map <LEADER>h <C-w>h
 map <LEADER>l <C-w>l
 
 map  <down> :res +5<CR>
@@ -106,20 +106,17 @@ Plug 'mattn/emmet-vim'
 
 Plug 'kien/ctrlp.vim'
 
-Plug 'rakr/vim-one'
+Plug 'skreek/skeletor.vim'
 
 Plug 'iamcco/markdown-preview.nvim',{'do': 'cd app & yarn install'}
 
 call plug#end()
 
 color
-" ====
-" ====vim-one
-" ====
-colorscheme one 
-set background=light
-let g:airline_theme='one'
-
+" ===
+" ===skeletor.vim
+" ===
+colo skeletor
 
 " ====
 " ====NERDTree
@@ -221,7 +218,6 @@ function! Show_documentation()
                 call CocAction('doHover')
         endif
 endfunction
-nnoremap <LEADER>h :call Show_documentation()<CR>
 nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
