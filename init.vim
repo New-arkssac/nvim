@@ -1,7 +1,7 @@
 syntax on
 set showmatch
 set number
-set relativenumber
+" set relativenumber
 set wrap
 set t_Co=256
 set showcmd
