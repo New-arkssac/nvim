@@ -1,7 +1,6 @@
 syntax on
 set showmatch
 set number
-" set relativenumber
 set wrap
 set t_Co=256
 set showcmd
@@ -86,7 +85,7 @@ Plug 'preservim/nerdtree'
 
 Plug 'dense-analysis/ale'
 
-Plug 'vim-php/tagbar-phpctags.vim'
+Plug 'vim-php/tagbar-phpctags.vim', {'for': ['php', 'vim-plug']}
 
 Plug 'majutsushi/tagbar'
 
@@ -96,7 +95,7 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'roxma/LanguageServer-php-neovim',{'do': 'composer install && composer run-script parse-stubs'}
+Plug 'roxma/LanguageServer-php-neovim',{'do': 'composer install && composer run-script parse-stubs', 'for': ['php', 'vim-plug']}
 
 Plug 'vimeo/psalm'
 
@@ -108,7 +107,7 @@ Plug 'kien/ctrlp.vim'
 
 Plug 'skreek/skeletor.vim'
 
-Plug 'iamcco/markdown-preview.nvim',{'do': 'cd app & yarn install'}
+Plug 'iamcco/markdown-preview.nvim',{'do': { -> mkdp#util#install_sync() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
@@ -303,4 +302,20 @@ let g:user_emmet_leader_key='<C-L>'
 " ===
 " ===markdown-preview
 " ===
-let g:mkdp_brower = 'Google chrome'
+let g:mkdp_open_ip = ''
+let g:mkdp_brower = 'Microsoft Edge'
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0
+		\}
+let g:mkdp_page_title = '「${name}」'
+let g:mkdp_filetypes = ['markdown']
