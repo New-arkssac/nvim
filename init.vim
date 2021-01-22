@@ -81,8 +81,6 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'connorholyday/vim-snazzy'
 
-Plug 'preservim/nerdtree'
-
 Plug 'dense-analysis/ale'
 
 Plug 'vim-php/tagbar-phpctags.vim', {'for': ['php', 'vim-plug']}
@@ -91,7 +89,7 @@ Plug 'majutsushi/tagbar'
 
 Plug 'mbbill/undotree'
 
-Plug 'Yggdroot/indentLine'
+Plug 'preservim/nerdtree'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -99,13 +97,11 @@ Plug 'roxma/LanguageServer-php-neovim',{'do': 'composer install && composer run-
 
 Plug 'vimeo/psalm'
 
-Plug 'majutsushi/tagbar'
-
 Plug 'mattn/emmet-vim'
 
-Plug 'kien/ctrlp.vim'
+Plug 'spf3000/skeletor.vim'
 
-Plug 'skreek/skeletor.vim'
+Plug 'ferrine/md-img-paste.vim',{'for': ['markdown', 'vim-plug']}
 
 Plug 'iamcco/markdown-preview.nvim',{'do': { -> mkdp#util#install_sync() }, 'for': ['markdown', 'vim-plug']}
 
@@ -184,7 +180,6 @@ let g:coc_global_extensions = [
         \ 'coc-translator',
         \ 'coc-tslint-plugin',
         \ 'coc-tsserver',
-        \ 'coc-vimlsp',
         \ 'coc-vimlsp',
         \ 'coc-yaml',
         \ 'coc-yank',
@@ -302,7 +297,6 @@ let g:user_emmet_leader_key='<C-L>'
 " ===
 " ===markdown-preview
 " ===
-let g:mkdp_open_ip = ''
 let g:mkdp_brower = 'Microsoft Edge'
 let g:mkdp_preview_options = {
     \ 'mkit': {},
@@ -319,3 +313,11 @@ let g:mkdp_preview_options = {
 		\}
 let g:mkdp_page_title = '「${name}」'
 let g:mkdp_filetypes = ['markdown']
+source ~/.config/nvim/markdown_preview.vim
+
+" ===
+" ===md-img-paste
+" ===
+let g:mdip_imgdir = 'img'
+let g:mdip_imgname = 'image'
+autocmd FileType markdown nnoremap <silent> <C-p> :call mdip#MarkdownClipboardImage()<CR>F%i
