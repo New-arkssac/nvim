@@ -68,7 +68,8 @@
 		"json",
 		"python",
 		"php",
-		"javascript"
+		"javascript",
+		"golang"
 	],
 	"yaml.format.enable": true,
 	"signature.target": "float",
@@ -189,16 +190,6 @@
 			"filetypes": ["swift"],
 			"initializationOptions": {},
 			"settings": {}
-		},
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"],
-			"initializationOptions": {
-				"gocodeCompletionEnabled": true,
-				"diagnosticsEnabled": true,
-				"lintTool": "golint"
-			}
 		},
 		"bash": {
 			"command": "bash-language-server",

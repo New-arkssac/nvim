@@ -99,6 +99,8 @@ Plug 'vimeo/psalm'
 
 Plug 'mattn/emmet-vim'
 
+Plug 'fatih/vim-go'
+
 Plug 'spf3000/skeletor.vim'
 
 Plug 'ferrine/md-img-paste.vim',{'for': ['markdown', 'vim-plug']}
@@ -191,7 +193,8 @@ let g:coc_global_extensions = [
 				\	'coc-sql',
 				\ 'coc-eslint',
 				\ 'coc-phpls',
-				\ 'coc-pairs']
+				\ 'coc-pairs',
+				\ 'coc-go']
 inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
