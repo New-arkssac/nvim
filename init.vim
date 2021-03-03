@@ -48,6 +48,12 @@ noremap H 5h
 noremap J 5j
 noremap K 5k
 noremap L 5l
+autocmd BufReadPost *.go :call Golang()
+function Golang()
+	echo "this is golang"
+	noremap <LEADER>o :w<CR>:terminal go run %<CR>
+endfunction
+
 
 
 map ; :
@@ -71,15 +77,13 @@ map  <UP> :res -5<CR>
 map  <left> :vertical resize-5<CR>
 map  <right> :vertical resiz+5<CR>
 
-map  ww :tabe<CR>
+map  W :tabe<CR>
 map  qq :-tabnext<CR>
 map  ee :+tabnext<CR>
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
-
-Plug 'connorholyday/vim-snazzy'
 
 Plug 'dense-analysis/ale'
 
@@ -99,9 +103,7 @@ Plug 'vimeo/psalm'
 
 Plug 'mattn/emmet-vim'
 
-Plug 'fatih/vim-go'
-
-Plug 'spf3000/skeletor.vim'
+Plug 'fatih/vim-go',{'for': ['go']}
 
 Plug 'ferrine/md-img-paste.vim',{'for': ['markdown', 'vim-plug']}
 
@@ -109,11 +111,10 @@ Plug 'iamcco/markdown-preview.nvim',{'do': { -> mkdp#util#install_sync() }, 'for
 
 call plug#end()
 
-color
-" ===
-" ===skeletor.vim
-" ===
-colo skeletor
+"
+"color
+"
+colorscheme	desert
 
 " ====
 " ====NERDTree
